@@ -2,3 +2,17 @@
 <p>
   Start editing to see some magic happen :)
 </p>
+<p>Il y a actuellement {{ festivals.length }} festivals.</p>
+<div *ngFor="let festival of festivals">
+  {{festival.name}} : {{festival.tables}}
+</div>
+<form #festivalFrom (ngSubmit)="onSubmit (festivalForm)">
+  <h2>Ajout Festival</h2>
+  <label>Nom du festival que vous souhaitez ajouter :</label>
+  <br />
+  <input type="text" id="name" />
+  <br />
+  <label>Nombre de tables du festival:</label>
+  <br />
+  <input type="number" id="tables" />
+</form>
